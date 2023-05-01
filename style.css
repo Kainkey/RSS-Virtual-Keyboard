@@ -1,10 +1,10 @@
 .keyboard {
     display: inline-block;
-    background-color: #f2f2f2;
-    border: 1px solid #999;
+    background-color: #000;
+    border: 1px solid #00ff00;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 0 5px #aaa;
+    box-shadow: 0 0 5px #00ff00;
     font-size: 16px;
   }
   
@@ -19,18 +19,19 @@
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: #fff;
-    border: 1px solid #999;
+    background-color: #2d2d2d;
+    border: 1px solid #00ff00;
     border-radius: 5px;
     margin: 5px;
     cursor: pointer;
-    box-shadow: 0 0 5px #aaa;
+    box-shadow: 0 0 5px #00ff00;
     font-size: 20px;
     font-weight: bold;
+    color: #00ff00;
   }
   
   .keyboard-key:hover {
-    background-color: #ddd;
+    background-color: #00ff00;
   }
   
   .space-key {
@@ -53,8 +54,10 @@
     height: 150px;
     font-size: 20px;
     padding: 10px;
-    border: 1px solid #999;
+    border: 1px solid #00ff00;
     border-radius: 5px;
-    box-shadow: 0 0 5px #aaa;
+    box-shadow: 0 0 5px #00ff00;
+    color: #00ff00;
+    background-color: #2d2d2d;
   }
   
