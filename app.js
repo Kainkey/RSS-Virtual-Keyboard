@@ -51,6 +51,31 @@ specialKeys.forEach(key => {
   }
 });
 
+// Добавляем обработчик событий keydown и keyup на элемент document
+document.addEventListener('keydown', (event) => {
+  // Проходим по элементам клавиатуры
+  const keys = keyboardElement.querySelectorAll('.keyboard-key');
+  keys.forEach(key => {
+    // Сравниваем текст кнопки с нажатой клавишей на клавиатуре
+    if (key.textContent.toLowerCase() === event.key.toLowerCase()) {
+      // Добавляем класс для подсветки
+      key.classList.add('active');
+    }
+  });
+});
+
+document.addEventListener('keyup', (event) => {
+  // Проходим по элементам клавиатуры
+  const keys = keyboardElement.querySelectorAll('.keyboard-key');
+  keys.forEach(key => {
+    // Сравниваем текст кнопки с отпущенной клавишей на клавиатуре
+    if (key.textContent.toLowerCase() === event.key.toLowerCase()) {
+      // Удаляем класс для подсветки
+      key.classList.remove('active');
+    }
+  });
+});
+
 
 
 
