@@ -40,9 +40,18 @@ keyboardLayout.forEach(row => {
         keyText = keyText.toUpperCase();
       }
 
-      // Добавляем символ в текстовое поле
-      textFieldElement.value += keyText;
-    });
+     // Добавляем символ в текстовое поле
+  if (key === 'Tab') {
+    textFieldElement.focus();
+    const cursorPosition = textFieldElement.selectionStart;
+    const textBeforeCursor = textFieldElement.value.slice(0, cursorPosition);
+    const textAfterCursor = textFieldElement.value.slice(cursorPosition);
+    textFieldElement.value = textBeforeCursor + '\t' + textAfterCursor;
+    textFieldElement.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
+  } else {
+    textFieldElement.value += keyText;
+  }
+});
 
     rowElement.appendChild(keyElement);
   });
@@ -53,6 +62,18 @@ keyboardLayout.forEach(row => {
 // Создаем текстовое поле
 const textFieldElement = document.createElement('textarea');
 textFieldElement.classList.add('text-field');
+
+textFieldElement.addEventListener('keydown', event => {
+  if (event.target === textFieldElement) {
+    event.preventDefault();
+  }
+});
+
+textFieldElement.addEventListener('blur', () => {
+  textFieldElement.removeEventListener('keydown');
+});
+
+document.body.appendChild(textFieldElement);
 
 // Добавляем клавиатуру и текстовое поле на страницу
 document.body.appendChild(textFieldElement);
@@ -240,8 +261,9 @@ textFieldElement.addEventListener('input', () => {
 
 
 
-// // Добавляем фокус на текстовое поле
-// textFieldElement.focus();
+// Добавляем фокус на текстовое поле
+textFieldElement.focus();
+
 
 
 
