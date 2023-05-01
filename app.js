@@ -38,14 +38,14 @@ const textFieldElement = document.createElement('textarea');
 textFieldElement.classList.add('text-field');
 
 // Добавляем клавиатуру и текстовое поле на страницу
-document.body.appendChild(keyboardElement);
 document.body.appendChild(textFieldElement);
+document.body.appendChild(keyboardElement);
 
 // Выбираем все специальные клавиши и применяем стили
 const specialKeys = document.querySelectorAll('.keyboard-key:not(:empty)');
 specialKeys.forEach(key => {
   const keyText = key.textContent.toLowerCase();
-  const specialChars = ['tab', 'capslock', 'enter', 'shift', 'backspace', 'delete', 'space'];
+  const specialChars = ['tab', 'capslock', 'enter', 'shift', 'backspace', 'delete', 'space', 'ctrl', 'alt', 'win'];
   if (specialChars.includes(keyText)) {
     key.classList.add(keyText + '-key');
   }

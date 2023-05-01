@@ -1,11 +1,13 @@
 .keyboard {
-    display: inline-block;
+    /* display: inline-block; */
     background-color: #000;
     border: 1px solid #00ff00;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 5px #00ff00;
     font-size: 16px;
+    margin: auto;
+    width: 940px;
   }
   
   .keyboard-row {
@@ -42,15 +44,19 @@
   .shift-key, .capslock-key, .enter-key, .tab-key {
     width: 90px;
   }
+
+  .ctrl-key, .alt-key, .win-key {
+    width: 80px;
+  }
   
   .backspace-key, .delete-key {
     width: 100px;
   }
   
   .text-field {
-    display: block;
-    margin-top: 10px;
-    width: 400px;
+    display: flex;
+    margin: 10px auto;
+    width: 600px;
     height: 150px;
     font-size: 20px;
     padding: 10px;
@@ -58,6 +64,7 @@
     border-radius: 5px;
     box-shadow: 0 0 5px #00ff00;
     color: #00ff00;
-    background-color: #2d2d2d;
+    background-color: #000;
+    
   }
   
