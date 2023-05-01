@@ -35,16 +35,16 @@
   }
   
   .space-key {
-    width: 150px;
+    width: 550px;
     height: 50px;
   }
   
-  .shift-key, .capslock-key, .enter-key {
-    width: 75px;
+  .shift-key, .capslock-key, .enter-key, .tab-key {
+    width: 90px;
   }
   
   .backspace-key, .delete-key {
-    width: 65px;
+    width: 100px;
   }
   
   .text-field {

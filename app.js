@@ -2,9 +2,9 @@
 const keyboardLayout = [
     ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
     ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
-    ['Caps Lock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'],
+    ['CapsLock', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'Enter'],
     ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'Shift'],
-    ['Ctrl', 'Win', 'Alt', 'space', 'Alt', 'Ctrl']
+    ['Ctrl', 'Win', 'Alt', 'Space', 'Alt', 'Ctrl']
 ];
 
 // Создаем элемент клавиатуры
@@ -44,13 +44,12 @@ document.body.appendChild(textFieldElement);
 // Выбираем все специальные клавиши и применяем стили
 const specialKeys = document.querySelectorAll('.keyboard-key:not(:empty)');
 specialKeys.forEach(key => {
-    const keyText = key.textContent.toLowerCase();
-    if (['tab', 'caps lock', 'enter', 'shift', 'backspace', 'delete', 'space'].includes(keyText)) {
-        key.classList.add(keyText + '-key');
-    }
+  const keyText = key.textContent.toLowerCase();
+  const specialChars = ['tab', 'capslock', 'enter', 'shift', 'backspace', 'delete', 'space'];
+  if (specialChars.includes(keyText)) {
+    key.classList.add(keyText + '-key');
+  }
 });
-
-
 
 
 
