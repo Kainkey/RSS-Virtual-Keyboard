@@ -17,7 +17,6 @@ let isAltEnabled = false;
 let isWinEnabled = false;
 
 
-
 keyboardLayout.forEach(row => {
   const rowElement = document.createElement('div');
   rowElement.classList.add('keyboard-row');
@@ -30,31 +29,7 @@ keyboardLayout.forEach(row => {
     // Добавляем обработчик события клика на кнопку клавиатуры
     keyElement.addEventListener('click', () => {
       let keyText = key;
-      keyElement.addEventListener('click', () => {
-        let keyText = key;
-      
-        // Если Caps Lock включен, переводим текст кнопки в верхний регистр
-        if (isCapsLockEnabled) {
-          keyText = keyText.toUpperCase();
-        }
-      
-        // Если Shift включен, переводим текст кнопки в верхний регистр
-        if (isShiftEnabled) {
-          keyText = keyText.toUpperCase();
-        }
-      
-        // Обновляем содержимое текстового поля
-        if (key === 'Tab') {
-          textFieldElement.focus();
-          const cursorPosition = textFieldElement.selectionStart;
-          const textBeforeCursor = textFieldElement.value.slice(0, cursorPosition);
-          const textAfterCursor = textFieldElement.value.slice(cursorPosition);
-          textFieldElement.value = textBeforeCursor + '\t' + textAfterCursor;
-          textFieldElement.setSelectionRange(cursorPosition + 1, cursorPosition + 1);
-        } else {
-          textFieldElement.textContent += keyElement.textContent;
-        }
-      });
+
       // Если Caps Lock включен, переводим текст кнопки в верхний регистр
       if (isCapsLockEnabled) {
         keyText = keyText.toUpperCase();
